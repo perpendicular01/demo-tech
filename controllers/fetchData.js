@@ -1,8 +1,11 @@
 const connection = require('./dbConnection.js');
-// const { scrapeStartech } = require('./scrapeGPU.js');
+
 const { scrapeStartechMoni } = require('./scrapeMonitor.js');
 const { scrapeTechlandMoni } = require('./scrapeMonitor.js');
 const { scrapePcHouseMoni } = require('./scrapeMonitor.js');
+const { scrapeStartechGPU } = require('./scrapeGPU.js');
+const { scrapeTechlandGPU } = require('./scrapeGPU.js');
+const { scrapePcHouseGPU } = require('./scrapeGPU.js');
 
 exports.fetchMonitorData=async(req,res)=>{
     try{
@@ -30,7 +33,9 @@ exports.fetchCPUData=async(req,res)=>{
 
 exports.fetchGPUData=async(req,res)=>{
     try{
-        // scrapeStartech();
+        // scrapeStartechGPU();
+        // scrapeTechlandGPU();
+        // scrapePcHouseGPU();
         let [rows]=await connection.execute('SELECT * FROM gpu_shop INNER JOIN gpu_details ON gpu_shop.productName = gpu_details.productName;');
         res.json({success:true,gpus:rows});
     }catch(error){

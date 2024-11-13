@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const connection = require('./dbConnection.js');
 const { scrapePcHouse } = require('./scrapeMonitor.js');
 
-exports.scrapeStartech = async () => {
+exports.scrapeStartechGPU = async () => {
     var page, photos1, links1, photos2, links2, links, photos, productName, price, specification, type, size, pattern, warranty, description;
 
     try {
@@ -165,7 +165,7 @@ exports.scrapeStartech = async () => {
 }
 
 
-exports.scrapeTechland = async () => {
+exports.scrapeTechlandGPU = async () => {
     var page, photos1, links1, photos2, links2, links, photos, productName, price, specification, type, size, pattern, warranty, description;
 
     try {
@@ -353,14 +353,14 @@ exports.scrapeTechland = async () => {
 }
 
 
-exports.scrapePcHouse = async () => {
+exports.scrapePcHouseGPU = async () => {
     var page, photos1, links1, photos2, links2, links, photos, productName, price, specification, type, size, pattern, warranty, description;
 
     try {
         browser = await puppeteer.launch();
         page = await browser.newPage();
 
-        await page.goto('https://www.pchouse.com.bd/graphics-card?sort=p.sort_order&order=ASC&fq=1&limit=100');
+        await page.goto('https://www.pchouse.com.bd/graphics-card?sort=pd.name&order=ASC&fq=1&limit=100');
 
         //Scraping link to the images of products
         photos1 = await page.$$eval('#content > div.main-products-wrapper > div.main-products.product-grid > div:nth-child(n) > div > div.image > a > div > img', (elements) => {
@@ -372,7 +372,7 @@ exports.scrapePcHouse = async () => {
             return elements.map((element) => element.href);
         })
 
-        await page.goto('https://www.pchouse.com.bd/graphics-card?sort=p.sort_order&order=ASC&fq=1&limit=100&page=2');
+        await page.goto('https://www.pchouse.com.bd/graphics-card?sort=pd.name&order=ASC&fq=1&limit=100&page=2');
 
         //Scraping link to the images of products
         photos2 = await page.$$eval('#content > div.main-products-wrapper > div.main-products.product-grid > div:nth-child(n) > div > div.image > a > div > img', (elements) => {
@@ -485,7 +485,7 @@ exports.scrapePcHouse = async () => {
                 warranty = 3;
             }
 
-            description = await page.$$eval('#blocks-65640699cd147-tab-2 > div > div > div.block-content.block-description', (elements)=>{
+            description = await page.$$eval('#blocks-6734b5c651a83-tab-2 > div > div > div.block-content.block-description > p:nth-child(2)', (elements)=>{
                 return elements.map((element) => {
                     // Use String.replace() to remove newline characters
                     return element.textContent.trim();
@@ -509,7 +509,7 @@ exports.scrapePcHouse = async () => {
             try {
                 [rows] = await connection.execute('select * from gpu_details where productName=?', [productName[0]]) || [];
                 if (rows[0] == undefined) {
-                    await connection.execute('insert into gpu_details values(?,?,?,?,?)', [productName[0], type, size, photos[i++], description[0]]);
+                    await connection.execute('insert into gpu_details values(?,?,?,?,?)', [productName[0] || "", type || "", size || 0, photos[i++] || "", description[0] || ""]);
                 }
             } catch (error) {
                 console.error(error);
