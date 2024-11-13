@@ -1,0 +1,378 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Logo */
+
+.navbar {
+  position: fixed;
+  z-index: 2;
+  height: 14vh;
+  width: 100%;
+  background-image: linear-gradient(
+    to left,
+    black,
+    rgb(28, 25, 25) 30%,
+    rgb(46, 43, 43) 100%
+  );
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  color: white;
+  width: 120px;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: 100px;
+}
+
+.nav-button {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-decoration: none;
+  margin-left: 600px;
+  list-style: none;
+}
+
+.home a {
+  color: rgb(146, 146, 224);
+  text-decoration: none;
+  list-style: none;
+  font-weight: bolder;
+}
+.about a {
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.nav-button i:hover {
+  color: rgb(146, 146, 224);
+}
+
+.about a:hover {
+  color: rgb(146, 146, 224);
+}
+.contact a:hover {
+  color: rgb(146, 146, 224);
+}
+
+.contact a {
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.nav-button i {
+  color: white;
+}
+
+.nav-product {
+  width: 100px;
+  margin-left: 50px;
+  margin-right: 20px;
+}
+
+.product {
+  color: white;
+  font-weight: bolder;
+  width: 86px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 0px;
+  z-index: 2;
+}
+
+.product:hover {
+  top: 66px;
+}
+
+.product:hover .product-content {
+  display: inline;
+}
+
+.product-image {
+  display: inline;
+}
+.product a {
+  text-decoration: none;
+}
+.product-text {
+  color: white;
+  display: inline;
+}
+
+.product-content {
+  display: none;
+}
+
+.product-content a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(223, 223, 20);
+  color: rgb(26, 21, 21);
+  text-decoration: none;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  border: 2px solid rgb(201, 184, 184);
+  border-radius: 2px;
+}
+
+.nav-authentication {
+}
+.dropdown-container {
+  width: 80px;
+  position: relative;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  margin-bottom: px;
+  z-index: 2;
+}
+
+.dropdown-container:hover {
+  top: 26px;
+}
+
+.dropdown-container:hover .dropdown-content {
+  display: inline;
+}
+
+.registration {
+  margin-bottom: 5px;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(148, 141, 131);
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  border: 2px solid rgb(201, 184, 184);
+  border-radius: 2px;
+}
+
+.dropdown-container {
+  width: 80px;
+  position: relative;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  z-index: 2;
+}
+
+.dropdown-container:hover {
+  top: 30px;
+}
+
+.dropdown-container:hover .dropdown-content {
+  display: inline;
+}
+
+.registration {
+  margin-bottom: 5px;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(148, 141, 131);
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  border: 2px solid rgb(201, 184, 184);
+  border-radius: 2px;
+}
+
+/* main */
+
+.main {
+  background-image: linear-gradient(
+    to left,
+    black,
+    rgb(28, 25, 25) 50%,
+    rgb(46, 43, 43) 100%
+  );
+
+  position: relative;
+  top: 14vh;
+}
+
+.search-bar {
+  display: flex;
+  height: 50px;
+  background-color: rgb(228, 244, 1);
+}
+.searchbar {
+  height: 35px;
+  width: 500px;
+  background-color: rgb(53, 43, 43);
+  color: rgb(220, 220, 34);
+  padding: 9px;
+  border-radius: 5px;
+  position: relative;
+  top: 7px;
+  left: 851px;
+}
+
+.search-icon {
+  font-size: 30px;
+  position: relative;
+  top: 10px;
+  left: 856px;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: none;
+}
+.card-container {
+  min-height: 72vh;
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-collapse: separate;
+  grid-row-gap: 20px;
+}
+.card {
+  min-height: 30vh;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 3px solid rgb(138, 143, 4);
+  border-radius: 8px;
+  padding: 4 rem;
+  height: 100%;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+  transition: 0.4s ease-in;
+}
+.card:hover {
+  background: rgb(205, 173, 16);
+}
+
+.card-name {
+  color: azure;
+  margin-bottom: 0.5rem;
+  margin: 20px;
+}
+
+.card-text {
+  color: rgb(236, 227, 227);
+  font-weight: bolder;
+  font-size: 1.2rem;
+  margin-left: 20px;
+  margin-bottom: 3px;
+}
+
+.card-image {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  display: inline block;
+  align-items: center;
+}
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -26px;
+  margin-bottom: 53px;
+  width: 100%;
+  margin-top: 52px;
+}
+.pagination {
+  width: 500px;
+  border-radius: 35px;
+  box-shadow: 0 0 20px 5px rgb(3, 3, 43);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(63, 67, 70);
+  padding: 10px;
+}
+
+.pagination a {
+  padding: 9px 10px;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(233, 152, 13);
+  border-radius: 50%;
+  transform: 0.5s ease-in-out;
+}
+
+.control {
+  font-size: 25px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 25px;
+  transform: 0.5s ease-in-out;
+}
+
+.disabled {
+  color: rgba(12, 16, 41, 0.5);
+  cursor: default;
+}
+
+.control:not(.disabled):hover,
+pageNumbers a:hover {
+  background-color: rgb(9, 9, 75);
+  color: white;
+}
+a.active {
+  background-color: rgb(9, 9, 75);
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.footertop {
+  height: 53px;
+  background-image: linear-gradient(
+    to left,
+    black,
+    rgb(28, 25, 25) 50%,
+    rgb(46, 43, 43) 100%
+  );
+}
+
+.footer {
+  position: relative;
+  height: 14vh;
+  top: 5vh;
+  background-image: linear-gradient(
+    to left,
+    black,
+    rgb(53, 53, 53) 50%,
+    rgb(46, 43, 43) 100%
+  );
+}

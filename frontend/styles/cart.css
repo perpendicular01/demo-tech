@@ -1,0 +1,479 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Logo */
+
+.navbar {
+  position: fixed;
+  height: 14vh;
+  width: 100%;
+  background-image: linear-gradient(
+    to left,
+    black,
+    rgb(28, 25, 25) 30%,
+    rgb(46, 43, 43) 100%
+  );
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+
+.nav-logo {
+  display: flex;
+  color: white;
+  width: 120px;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: 100px;
+}
+
+.nav-button {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-decoration: none;
+  margin-left: 600px;
+  list-style: none;
+}
+
+.home a {
+  color: rgb(146, 146, 224);
+  text-decoration: none;
+  list-style: none;
+  font-weight: bolder;
+}
+.about a {
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.nav-button i:hover {
+  color: rgb(146, 146, 224);
+}
+
+.about a:hover {
+  color: rgb(146, 146, 224);
+}
+.contact a:hover {
+  color: rgb(146, 146, 224);
+}
+
+.contact a {
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.nav-button i {
+  color: white;
+}
+
+.nav-product {
+  width: 100px;
+  margin-left: 50px;
+  margin-right: 20px;
+}
+
+.product {
+  color: white;
+  font-weight: bolder;
+  width: 86px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 0px;
+  z-index: 2;
+}
+
+.product:hover {
+  top: 66px;
+}
+
+.product:hover .product-content {
+  display: inline;
+}
+
+.product-image {
+  display: inline;
+}
+.product a {
+  text-decoration: none;
+}
+.product-text {
+  color: white;
+  display: inline;
+}
+
+.product-content {
+  display: none;
+  position: relative;
+  z-index: 5;
+}
+
+.product-content a {
+  display: inline-block;
+  width: 100%;
+  z-index: 10;
+  text-align: center;
+  background-color: rgb(223, 223, 20);
+  color: rgb(26, 21, 21);
+  text-decoration: none;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  border: 2px solid rgb(201, 184, 184);
+  border-radius: 2px;
+}
+
+.nav-authentication {
+}
+
+.dropdown-container {
+  width: 80px;
+  position: relative;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  z-index: 3;
+}
+
+.dropdown-container:hover {
+  top: 30px;
+}
+
+.dropdown-container:hover .dropdown-content {
+  display: inline;
+}
+
+.registration {
+  margin-bottom: 5px;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(148, 141, 131);
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  border: 2px solid rgb(201, 184, 184);
+  border-radius: 2px;
+}
+
+/* main */
+
+.main {
+  background-image: linear-gradient(
+    to left,
+    black,
+    rgb(28, 25, 25) 50%,
+    rgb(46, 43, 43) 100%
+  );
+
+  position: relative;
+  top: 14vh;
+  padding: 10px;
+
+  min-height: 82vh;
+}
+
+.cart-nav {
+  display: flex;
+  align-items: center;
+  background-color: #628181;
+  position: absolute;
+  width: 1120px;
+  margin-left: 212px;
+  height: 59px;
+  border-radius: 18px;
+  position: relative;
+  top: 34px;
+}
+.cart-nav-product {
+  font-size: 20px;
+  color: #e0e0e0;
+  font-weight: bolder;
+  margin-left: 134px;
+  margin-right: 50px;
+}
+
+.cart-nav-shopName {
+  font-size: 20px;
+  color: #e0e0e0;
+  font-weight: bolder;
+  margin-left: 186px;
+  margin-right: 150px;
+}
+
+.cart-nav-count {
+  font-size: 20px;
+  color: white;
+  font-weight: bolder;
+  margin-left: 50px;
+}
+.cart-nav-price {
+  font-size: 20px;
+  color: white;
+  margin-left: 178px;
+  font-weight: bolder;
+}
+
+.card-container {
+  width: 80%;
+
+  margin-top: 70px;
+  margin-left: 148px;
+  padding: 10px;
+}
+.cart-items {
+  display: flex;
+  align-items: center;
+  background-color: rgb(58, 51, 51);
+  border: 2px solid black;
+  width: 1132px;
+  margin-left: 50px;
+  height: 69px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+}
+.cart-text {
+  font-size: 17px;
+  color: white;
+  width: 400px;
+  margin-left: 39px;
+  margin-right: 0px;
+}
+.cart-shoptext {
+  font-size: 18px;
+  color: white;
+  width: 200px;
+  margin-left: 73px;
+  margin-right: 0px;
+}
+/* .cart-count {
+  font-size: 20px;
+  color: white;
+} */
+.cart-price {
+  font-size: 17px;
+  color: white;
+  margin-left: 68px;
+}
+.plus_minus {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  margin-left: 53px;
+  margin-right: 74px;
+  width: 120px;
+}
+
+.plus {
+  color: black;
+  font-size: 17px;
+  background-color: #a19990;
+  width: 25px;
+}
+.plus:hover {
+  background-color: rgb(215, 215, 33);
+  cursor: pointer;
+}
+.minus:hover {
+  background-color: rgb(215, 215, 33);
+  cursor: pointer;
+}
+
+.plus_minus p {
+  color: rgb(251 251 247);
+  font-size: 17px;
+  border: 2px solid rgb(148, 141, 131);
+  margin: 2px;
+  width: 23px;
+  text-align: center;
+}
+.minus {
+  color: black;
+  font-size: 17px;
+  background-color: rgb(148, 141, 131);
+  width: 25px;
+}
+
+.line {
+  width: 1172px;
+  margin-left: 191px;
+  border: 3px solid #628181;
+}
+.total-price {
+  margin-top: 10px;
+  font-size: 17px;
+  margin-left: 1150px;
+  color: #fffefb;
+  font-weight: bolder;
+}
+.discount-price {
+  top: -51px;
+  margin-top: 10px;
+  font-size: 17px;
+  margin-left: 1130px;
+  color: #fffefb;
+  font-weight: bolder;
+  position: relative;
+}
+
+.promo {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.promotext {
+  font-size: 20px;
+  color: white;
+  border: 12px solid #1c3939;
+  font-weight: bolder;
+  padding: 8px;
+  background-color: cadetblue;
+  margin-left: 439px;
+}
+.promofield {
+  font-size: 20px;
+  height: 40px;
+  width: 230px;
+  background-color: cadetblue;
+  color: white;
+  margin-left: 0xp;
+  margin-left: 15px;
+  text-align: center;
+}
+.promoapply {
+  font-size: 20px;
+  color: white;
+  border: none;
+  margin-left: 19px;
+  padding: 14px;
+  background-color: brown;
+}
+.promoapply:hover {
+  background-color: rgb(60, 6, 6);
+  cursor: pointer;
+}
+
+.popup {
+  width: 437px;
+  background-color: #236767;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  color: antiquewhite;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+  padding: 29px;
+}
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup button {
+  width: 115px;
+  height: 47px;
+  margin-top: 50px;
+  padding: 10px 0;
+  background-color: #237e6f;
+  color: aquamarine;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  padding: px;
+}
+.rating-box {
+  position: relative;
+  background: #237e6f;
+  padding: 25px 50px 35px;
+  border-radius: 25px;
+  margin-top: 46px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+.rating-box header {
+  font-size: 22px;
+  color: #dadada;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.rating-box .stars {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.stars i {
+  color: #e6e6e6;
+  font-size: 35px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.stars i.active {
+  color: #ff9c1a;
+}
+
+.invoice {
+  background-color: #1c3939;
+  color: white;
+  height: 53px;
+  width: 113px;
+  border: 4px solid #0f5959;
+  margin-left: 1172px;
+  position: relative;
+  top: -7px;
+  padding: 5px;
+}
+.invoice:hover {
+  background-color: #336f6f;
+}
+
+.footer {
+  height: 14vh;
+  margin-top: 105px;
+  background-image: linear-gradient(
+    to left,
+    black,
+    rgb(53, 53, 53) 50%,
+    rgb(46, 43, 43) 100%
+  );
+}
+
+/* 
+      <div class="product">
+                <i class="fa-solid fa-shop" style="display: inline"></i>
+                <p class="registration" style="display: inline">Products</p>
+                <div class="product-content">
+                  <a href="../product/product.html">MONITOR</a>
+                  <a href="../cpu_page/cpu.html">CPU</a>
+                  <a href="../ram_page/ram.html">RAM</a>
+                  <a href="../signUp/signup.html">ROM</a>
+                  <a href="../gpu_page/gpu.html">GPU</a>
+                </div>
+              </div> */

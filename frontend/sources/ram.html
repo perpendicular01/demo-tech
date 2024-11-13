@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="ram.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <div class="logo">
+          <i class="fa-solid fa-computer"></i>
+        </div>
+        <div class="logo-text">
+          <p>TechMerge</p>
+        </div>
+      </div>
+      <div class="nav-link">
+        <ul class="nav-button">
+          <li class="home"><a href="/">Home</a></li>
+          <li class="about"><a href="/about">About</a></li>
+          <li class="contact"><a href="/contact">Contact</a></li>
+          <i class="fa-solid fa-moon"></i>
+        </ul>
+      </div>
+
+      <div class="nav-product">
+        <!-- <div class="product">
+          <i class="fa-solid fa-shop product-image"></i>
+          <a href="../product/product.html">
+            <p class="product-text">Products</p>
+          </a>
+          <div class="product-content">
+            <a href="../product/product.html">Monitor</a>
+            <a href="../signUp/signup.html">Signup</a>
+          </div>
+        </div> -->
+        <div class="product">
+          <i class="fa-solid fa-shop" style="display: inline"></i>
+          <p class="registration" style="display: inline">Products</p>
+          <div class="product-content">
+            <a href="/monitor">MONITOR</a>
+            <a href="/cpu">CPU</a>
+            <a href="/ram">RAM</a>
+            <a href="">ROM</a>
+            <a href="/gpu">GPU</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-authentication">
+        <div class="dropdown-container">
+          <i class="fa-solid fa-user" style="display: inline"></i>
+          <p class="registration" style="display: inline">Account</p>
+          <div class="dropdown-content">
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main">
+
+        <div class="search-bar">
+          <input type="text" class="searchbar" id="searchbar" name="searchbar" placeholder="Search...">
+          <i class="fa-solid fa-magnifying-glass search-icon" ></i>
+
+
+        </div>
+        <div class="card-container">
+                <!-- <div class="card">
+                <h3 class="card-name">Card Heading
+                </h3>
+                <p class="card-text size">Size:</p>
+                <p class="card-text price">Price:</p>
+                <p class="card-text resolution">Resolution</p> -->
+            </div>
+            
+        </div>
+        <div class="pagination-container">
+          <div class="pagination">
+            <button class="control" id="prev" title="Previous Page"> < Prev</button>
+            <div class="pageNumbers">
+
+            </div>
+            <button class="control" id="next" title="Next Page">Next > </button>
+
+          </div>
+
+        </div>
+        <div class="footertop"></div>
+
+
+
+
+        <script src="ram.js"></script>
+     
+        
+    </main>
+
+    <footer class="footer"></footer>
+  </body>
+</html>

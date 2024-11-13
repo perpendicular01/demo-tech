@@ -1,0 +1,578 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Logo */
+
+.navbar {
+  position: fixed;
+  height: 14vh;
+  width: 100%;
+  background-image: linear-gradient(
+    to left,
+    black,
+    rgb(28, 25, 25) 30%,
+    rgb(46, 43, 43) 100%
+  );
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+
+.nav-logo {
+  display: flex;
+  color: white;
+  width: 120px;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: 100px;
+}
+
+.nav-button {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-decoration: none;
+  margin-left: 600px;
+  list-style: none;
+}
+
+.home a {
+  color: rgb(146, 146, 224);
+  text-decoration: none;
+  list-style: none;
+  font-weight: bolder;
+}
+.about a {
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.nav-button i:hover {
+  color: rgb(146, 146, 224);
+}
+
+.about a:hover {
+  color: rgb(146, 146, 224);
+}
+.contact a:hover {
+  color: rgb(146, 146, 224);
+}
+
+.contact a {
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.nav-button i {
+  color: white;
+}
+
+.nav-product {
+  width: 100px;
+  margin-left: 50px;
+  margin-right: 20px;
+}
+
+.product {
+  color: white;
+  font-weight: bolder;
+  width: 86px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 0px;
+  z-index: 2;
+}
+
+.product:hover {
+  top: 66px;
+}
+
+.product:hover .product-content {
+  display: inline;
+}
+
+.product-image {
+  display: inline;
+}
+.product a {
+  text-decoration: none;
+}
+.product-text {
+  color: white;
+  display: inline;
+}
+
+.product-content {
+  display: none;
+  position: relative;
+  z-index: 5;
+}
+
+.product-content a {
+  display: inline-block;
+  width: 100%;
+  z-index: 10;
+  text-align: center;
+  background-color: rgb(223, 223, 20);
+  color: rgb(26, 21, 21);
+  text-decoration: none;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  border: 2px solid rgb(201, 184, 184);
+  border-radius: 2px;
+}
+
+.nav-authentication {
+}
+
+.dropdown-container {
+  width: 80px;
+  position: relative;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  z-index: 3;
+}
+
+.dropdown-container:hover {
+  top: 30px;
+}
+
+.dropdown-container:hover .dropdown-content {
+  display: inline;
+}
+
+.registration {
+  margin-bottom: 5px;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(148, 141, 131);
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  margin-bottom: 5px;
+  border: 2px solid rgb(201, 184, 184);
+  border-radius: 2px;
+}
+
+/* main */
+
+.main {
+  background-image: linear-gradient(
+    to left,
+    black,
+    rgb(28, 25, 25) 50%,
+    rgb(46, 43, 43) 100%
+  );
+
+  position: relative;
+  top: 14vh;
+  /* min-height: 106vh; */
+  padding: 10px;
+}
+
+.card-container {
+  position: relative;
+  top: 49px;
+  min-height: 80vhvh;
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-collapse: separate;
+  grid-row-gap: 20px;
+}
+.info {
+  min-height: 50vh;
+  min-width: 80vw;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 9px;
+}
+.imagediv {
+  position: relative;
+  width: 360px;
+  top: 10px;
+  align-items: center;
+  display: inline;
+}
+.divinfo {
+  width: 701px;
+  height: 369px;
+  position: relative;
+  top: 20px;
+  left: 27px;
+}
+
+.card {
+  min-height: 30vh;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 3px solid rgb(138, 143, 4);
+  border-radius: 8px;
+  padding: 4 rem;
+  height: 100%;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+  transition: 0.4s ease-in;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-name {
+  margin-left: 51px;
+  color: azure;
+  margin-bottom: 0.5rem;
+  margin: auto;
+  font-size: 25px;
+  margin-left: 66px;
+  margin-top: 20px;
+}
+
+.card-text {
+  color: rgb(236, 227, 227);
+  font-weight: bolder;
+  font-size: 20px;
+  margin-left: 68px;
+  margin-bottom: 3px;
+  margin-top: 9px;
+}
+
+.card-image {
+  margin-top: 18px;
+  margin-left: 48px;
+  padding: 10px;
+  width: 100%;
+  display: inline block;
+}
+.card-image:hover {
+  /* height: 110%; */
+  width: 102%;
+}
+
+.sourceLink {
+  text-decoration: none;
+  position: relative;
+  top: 21px;
+  left: 989px;
+  display: inline-block;
+}
+.cartLink {
+  position: relative;
+  display: flex;
+  height: 76px;
+  width: 146px;
+  justify-content: center;
+  align-items: center;
+
+  color: black;
+  background-color: #ff9312;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 16px;
+  font-size: 19px;
+}
+.cartLink:hover {
+  background-color: rgb(206, 235, 42);
+}
+.cartLink:hover .addtocart {
+  background-color: rgb(206, 235, 42);
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  height: 76px;
+  width: 146px;
+  justify-content: center;
+  align-items: center;
+  right: -1177px;
+  bottom: 55px;
+  color: black;
+  background-color: #ff9312;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 16px;
+  font-size: 19px;
+}
+.cart:hover {
+  background-color: rgb(206, 235, 42);
+}
+.cart:hover .addtocart {
+  background-color: rgb(206, 235, 42);
+}
+.addtocart {
+  font-size: 19px;
+  color: black;
+  font-weight: bolder;
+  background-color: #ff9312;
+  text-decoration: none;
+  margin: 3px;
+  border: none;
+}
+.cartDiv {
+  position: fixed;
+  z-index: 7;
+}
+.goto_cart {
+  position: relative;
+  display: flex;
+  height: 54px;
+  width: 86px;
+  justify-content: center;
+  align-items: center;
+  right: -1402px;
+  bottom: 657px;
+  color: black;
+  background-color: #35322d;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 16px;
+  font-size: 19px;
+  text-decoration: none;
+  z-index: 7;
+}
+
+.goto_cart i {
+  color: black;
+}
+.goto_cart a {
+  text-decoration: none;
+}
+.goto_cart:hover {
+  background-color: rgb(206, 235, 42);
+}
+.goto_cart:hover .goToCart {
+  background-color: rgb(206, 235, 42);
+}
+
+.goToCart {
+  font-size: 19px;
+  color: black;
+  font-weight: bolder;
+  background-color: #35322d;
+  text-decoration: none;
+  margin: 3px;
+  border: none;
+}
+.description {
+  border: 2px solid rgb(206, 235, 42);
+  margin-bottom: 50px;
+  margin-top: -35px;
+  width: 98vw;
+  width: 1452px;
+  margin-left: 32px;
+  border-radius: 12px;
+}
+
+.description_header {
+  font-size: 26px;
+  color: #f6f6f6d9;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-bottom: 17px;
+  font-weight: bolder;
+}
+.description_text {
+  font-size: 17px;
+  color: white;
+  margin: 8px;
+  margin-bottom: 13px;
+}
+.comment-box {
+  padding: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin: 19px;
+}
+.user {
+  display: flex;
+  width: min-content;
+  margin-left: 3px;
+  font-size: 27px;
+  font-weight: bolder;
+}
+.name {
+  height: 1px;
+  width: 30px;
+  font-weight: bolder;
+  margin-left: 11px;
+  color: #a95f07cc;
+}
+.comment-box textarea {
+  background-color: #7a6161fc;
+  width: 45vw;
+  height: 131px;
+  margin: 10px 0px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 0 0.5px #0003;
+  color: #f9f5f5cf;
+  font-size: 19px;
+}
+.comment-submit {
+  position: relative;
+  top: -25px;
+  left: 10px;
+  border-radius: 6px;
+  height: 40px;
+  width: 78px;
+  background-color: #7a7abf99;
+}
+.comment-submit:hover {
+  background-color: #7a9fd4ed;
+  height: 47px;
+  width: 89px;
+}
+
+.plus_minus {
+  top: -627px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  width: 120px;
+  left: 1190px;
+}
+
+.plus {
+  color: black;
+  font-size: 20px;
+  background-color: #ff9312;
+  width: 30px;
+}
+.plus:hover {
+  background-color: rgb(215, 215, 33);
+  cursor: pointer;
+}
+.minus:hover {
+  background-color: rgb(215, 215, 33);
+  cursor: pointer;
+}
+
+.plus_minus p {
+  color: rgb(248, 248, 4);
+  font-size: 20px;
+  border: 2px solid rgb(215, 215, 33);
+  margin: 2px;
+  width: 30px;
+  text-align: center;
+}
+.minus {
+  color: black;
+  font-size: 20px;
+  background-color: #ff9312;
+  width: 30px;
+}
+.footertop {
+  height: 53px;
+  background-image: linear-gradient(
+    to left,
+    black,
+    rgb(28, 25, 25) 50%,
+    rgb(46, 43, 43) 100%
+  );
+}
+
+.footer {
+  position: relative;
+  height: 14vh;
+  top: 5vh;
+  background-image: linear-gradient(
+    to left,
+    black,
+    rgb(53, 53, 53) 50%,
+    rgb(46, 43, 43) 100%
+  );
+}
+
+.comment-section {
+  margin-top: -50px;
+}
+
+.comment-container {
+  min-height: 200px;
+  /* overflow-y: scroll; */
+  border: 7px solid #60646a;
+  padding: 10px;
+  margin: 9px;
+  margin-left: 27px;
+  background-image: linear-gradient(
+    to left,
+    #000000,
+    #0a1b31 50%,
+    rgb(26, 21, 21) 100%
+  );
+}
+
+.comment-area {
+  width: 100%;
+  resize: vertical; /* Allow vertical resizing */
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 5px;
+}
+.comment-section-header {
+  color: #dcd7d8;
+  margin-left: 25px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.comment-area-div {
+  display: flex;
+  align-items: center;
+  margin-bottom: -3px;
+  margin-top: 6px;
+}
+.comment-area-div i {
+  margin-right: 10px;
+  color: white;
+  margin-left: 6px;
+}
+
+.comment-area-text {
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.comment-container-text {
+  color: #000000;
+  margin-top: 11px;
+  margin-left: 48px;
+  font-size: 20px;
+  border: 5px solid rgb(127 123 123);
+  display: inline-block;
+  padding: 6px;
+  background-color: rgb(53, 53, 53);
+}
+/* 
+      <div class="product">
+                <i class="fa-solid fa-shop" style="display: inline"></i>
+                <p class="registration" style="display: inline">Products</p>
+                <div class="product-content">
+                  <a href="../product/product.html">MONITOR</a>
+                  <a href="../cpu_page/cpu.html">CPU</a>
+                  <a href="../ram_page/ram.html">RAM</a>
+                  <a href="../signUp/signup.html">ROM</a>
+                  <a href="../gpu_page/gpu.html">GPU</a>
+                </div>
+              </div> */
