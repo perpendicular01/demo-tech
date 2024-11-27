@@ -5,6 +5,7 @@ const session = require("express-session");
 
 dotenv.config({ path: "./db.env" });
 
+
 const app = express();
 //Use the static html/css files
 //app.use(express.static("./frontend"));

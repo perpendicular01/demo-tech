@@ -7,7 +7,7 @@
 /* Logo */
 
 .navbar {
-  height: 14vh;
+    height: 12vh;
   /* background-image: linear-gradient(
     to left,
     black,
@@ -162,24 +162,20 @@
 .cartDiv1 {
   position: fixed;
   z-index: 8;
-  left: 1370px;
+  right: 20px; /* Fixed distance from the right edge */
+  bottom: 20px; /* Fixed distance from the bottom edge */;
 }
 .goto_cart1 {
-  position: relative;
   display: flex;
-  height: 54px;
-  width: 127px;
+  flex-direction: column;
+  height: 62px;
+  width: 60px;
   justify-content: center;
   align-items: center;
-
-  background-color: #20204E;
-  text-decoration: none;
+  background-color: #353573;
   border: 2px solid black;
   border-radius: 16px;
-  font-size: 19px;
-  left: 0px;
-  text-decoration: none;
-  z-index: 10;
+  font-size: 14px;
   padding: 5px;
 }
 
@@ -189,23 +185,14 @@
 .goto_cart1 a {
   text-decoration: none;
 }
-.goto_cart1:hover {
-  background-color: gray;
-  color: black;
-}
-.goto_cart1:hover .goToCart1 {
-  background-color: gray;
-  color: black;
-}
+
+
 
 
 .goToCart1 {
-  font-size: 19px;
-  color: black;
+  font-size: 12px;
   font-weight: bolder;
-  text-decoration: none;
   margin: 3px;
-  border: none;
 }
 .cartDiv {
   position: fixed;
@@ -319,12 +306,4 @@
   color: white;
 }
 
-.footer {
-  height: 14vh;
-  background-image: linear-gradient(
-    to left,
-    black,
-    rgb(53, 53, 53) 50%,
-    rgb(46, 43, 43) 100%
-  );
-}
+

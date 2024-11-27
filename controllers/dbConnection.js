@@ -9,6 +9,7 @@ const mysql = require('mysql2');
     }
     );
   // now get a Promise wrapped instance of that pool
+  
   const promisePool = pool.promise();
   // query database using promises
   module.exports = promisePool;

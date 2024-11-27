@@ -8,17 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Check if user data exists
     if (userData.username) {
       // Display user data on the home page as needed
-      const account = document.querySelector(
-        "body > nav > div.nav-authentication > div > p"
-      );
+      const account = document.querySelector("#ac1");
       account.innerHTML = userData.username;
+      
       const link1 = document.querySelector(
-        "body > nav > div.nav-authentication > div > div > a:nth-child(1)"
+        "#aclogin"
       );
       link1.innerHTML = "Profile";
       link1.href = "";
       const link2 = document.querySelector(
-        "body > nav > div.nav-authentication > div > div > a:nth-child(2)"
+        "#acsignup"
       );
       link2.innerHTML = "Logout";
       link2.href = "";
@@ -27,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const Logout = document.querySelector(
-  "body > nav > div.nav-authentication > div > div > a:nth-child(2)"
+  "#acsignup"
 );
 
 Logout.addEventListener("click", function (event) {
@@ -53,7 +52,7 @@ Logout.addEventListener("click", function (event) {
 });
 
 const profileButton= document.querySelector(
-  "body > nav > div.nav-authentication > div > div > a:nth-child(1)"
+  "#aclogin"
 );
 
 profileButton.addEventListener("click", function(event){
@@ -300,16 +299,44 @@ const start = async function () {
             const postElement = document.createElement("div");
             postElement.classList.add("card");
             postElement.innerHTML = `
-        <a href="javascript:goToDetailsPage(${postData.index})" class="card-link">
+            <a href="javascript:goToDetailsPage(${postData.index})" class="card-link">
+        <p class="gpuShop"> ${postData.shop}</p>
         <img src="${postData.image}" alt="" srcset="" class="card-image">
-        <h3 class="card-name">${postData.productName}</h3>
-        <p class="card-text resoluiton">Type: ${postData.type}</p>
-        <p class="card-text display-size">Size: ${postData.size}</p>
-        <p class="card-text panel-size">Shop Name: ${postData.shop}</p>
-        <p class="card-text refresh-rate">Price: ${postData.price}</p>
-        </a>    
-        <button class="addtoCompare">Add to Compare</button>
+        <div class="divider"></div>
+        <div class="card-name-box h-24" > 
+          <h3 class="card-name">${postData.productName}</h3>
+        </div>
+        <p class="card-text type"> Type: ${postData.type}</p>
+        <p class="card-text display-size">Memory Size: ${postData.size} GB</p>
+        
+        <div class="divider"></div>
+            <p class="price">Price: ${postData.price}</p>
+            <div class="text-center mt-2 mb-2">
+                <button class="buynow text-[#20204E] font-bold py-[6px] px-12 bg-[#E0E0E0] rounded-lg mt-3">
+                <i class="fa-solid fa-cart-shopping text-[#20204E]"></i> Buy Now
+                </button>
+            </div>
+            </a>
+            <button class="addtoCompare text-sm text-[#000000] pt-2">Add to Compare</button>
         `;
+        
+
+
+        
+
+
+        // <a href="javascript:goToDetailsPage(${postData.index})" class="card-link">
+        // <img src="${postData.image}" alt="" srcset="" class="card-image">
+        // <h3 class="card-name">${postData.productName}</h3>
+        // <p class="card-text resoluiton">Type: ${postData.type}</p>
+        // <p class="card-text display-size">Memory Size: ${postData.size} GB</p>
+        // <p class="card-text panel-size">Shop Name: ${postData.shop}</p>
+        // <p class="card-text refresh-rate">Price: ${postData.price}</p>
+        // </a>    
+        // <button class="addtoCompare">Add to Compare</button>
+        // `;
+
+
             postContainer.appendChild(postElement);
           });
         };

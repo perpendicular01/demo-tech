@@ -3,11 +3,11 @@ let cards = [];
 // document.addEventListener("DOMContentLoaded", () => {
 //   let userData = JSON.parse(localStorage.getItem("userData"));
 
-  
+
 //   if (userData != null) {
-    
+
 //     if (userData.username) {
-      
+
 //       const account = document.querySelector(
 //         "body > nav > div.nav-authentication > div > p"
 //       );
@@ -74,6 +74,8 @@ function goToDetailsPage(index) {
   window.location.href = "/monitorDetails?" + queryParams;
 }
 
+
+// backend theke niye data gula cards a rakha
 const fetchdata = async function () {
   try {
     const response = await fetch("/backend/fetchMonitorData", {
@@ -222,32 +224,24 @@ const start = async function () {
 
   const submitButton = document.querySelector(".submit-button");
 
+// submit button
   submitButton.addEventListener("click", () => {
-    let minOfRange = document.querySelector(
-      "body > main > div.filteroption > div.wrapper > div.price-input > div:nth-child(1) > input"
-    ).value;
-    let maxOfRange = document.querySelector(
-      "body > main > div.filteroption > div.wrapper > div.price-input > div:nth-child(3) > input"
-    ).value;
-    let selectedPanelTypes = Array.from(
-      document.querySelectorAll(
-        "body > main > div.filteroption > div.hero > div:nth-child(1) > div:nth-child(n) > label > input"
-      )
-    )
+    // min price
+    let minOfRange = document.querySelector("#minimum-input").value;
+    // max price
+    let maxOfRange = document.querySelector("#maximum-input").value;
+    // panel type
+    let selectedPanelTypes = Array.from(document.querySelectorAll(".monipanelcheck"))
       .filter((checkbox) => checkbox.checked)
       .map((checkbox) => checkbox.value);
+    // display type
     let selectedDisplaySizes = Array.from(
-      document.querySelectorAll(
-        "body > main > div.filteroption > div.hero > div:nth-child(2) > div:nth-child(n) > label > input"
-      )
-    )
+      document.querySelectorAll(".monitordisplay"))
       .filter((checkbox) => checkbox.checked)
       .map((checkbox) => checkbox.value);
+    // resolution type
     let selectedResolutions = Array.from(
-      document.querySelectorAll(
-        "body > main > div.filteroption > div.hero > div:nth-child(3) > div:nth-child(n) > label > input"
-      )
-    )
+      document.querySelectorAll(".monitorreso"))
       .filter((checkbox) => checkbox.checked)
       .map((checkbox) => checkbox.value);
 
@@ -321,17 +315,25 @@ const start = async function () {
             postElement.classList.add("card");
             postElement.innerHTML = `
             <a href="javascript:goToDetailsPage(${postData.index})" class="card-link">
+            <p class="moniShop"> ${postData.shop}</p>
             <img src="${postData.image}" alt="" srcset="" class="card-image">
-            <h3 class="card-name">${postData.productName}</h3>
+            <div class="divider"></div>
+            <div class="card-name-box h-24" > 
+              <h3 class="card-name">${postData.productName}</h3>
+            </div>
             <p class="card-text resoluiton">Resolution: ${postData.resolution}</p>
             <p class="card-text display-size">Display Size: ${postData.displaySize}</p>
             <p class="card-text panel-size">Panel Type: ${postData.panelType}</p>
-            <p class="card-text refresh-rate">Shop Name: ${postData.shop}</p>
-            <p class="card-text price">Price: ${postData.price}</p>
-            
+            <div class="divider"></div>
+            <p class="price">Price: ${postData.price}</p>
+            <div class="text-center mt-2 mb-2">
+                <button class="buynow text-[#20204E] font-bold py-[6px] px-12 bg-[#E0E0E0] rounded-lg mt-3">
+                <i class="fa-solid fa-cart-shopping text-[#20204E]"></i> Buy Now
+                </button>
+            </div>
             </a>
-            <button class="addtoCompare">Add to Compare</button>
-            `;
+            <button class="addtoCompare text-sm text-[#000000] pt-2">Add to Compare</button>
+        `;
             postContainer.appendChild(postElement);
           });
         };
@@ -344,7 +346,7 @@ const start = async function () {
         const prevButton = document.getElementById("prev");
         const nextButton = document.getElementById("next");
 
-        const contentLimit = 32;
+        const contentLimit = 60;
         const pageCount = Math.ceil(temparr.length / contentLimit);
         let currentPage = 1;
 
@@ -437,6 +439,8 @@ const start = async function () {
   });
   const resetButton = document.querySelector(".reset-button");
 
+
+// reset button
   resetButton.addEventListener("click", () => {
     // for (let i = 0; i < temparr.length; i++) {
     //   temparr.pop();
@@ -467,16 +471,24 @@ const start = async function () {
         postElement.classList.add("card");
         postElement.innerHTML = `
         <a href="javascript:goToDetailsPage(${postData.index})" class="card-link">
-        <img src="${postData.image}" alt="" srcset="" class="card-image">
-        <h3 class="card-name">${postData.productName}</h3>
-        <p class="card-text resoluiton">Resolution: ${postData.resolution}</p>
-        <p class="card-text display-size">Display Size: ${postData.displaySize}</p>
-        <p class="card-text panel-size">Panel Type: ${postData.panelType}</p>
-        <p class="card-text refresh-rate">Shop Name: ${postData.shop}</p>
-        <p class="card-text price">Price: ${postData.price}</p>
-        
-        </a>
-        <button class="addtoCompare">Add to Compare</button>
+            <p class="moniShop"> ${postData.shop}</p>
+            <img src="${postData.image}" alt="" srcset="" class="card-image">
+            <div class="divider"></div>
+            <div class="card-name-box h-24" > 
+              <h3 class="card-name">${postData.productName}</h3>
+            </div>
+            <p class="card-text resoluiton">Resolution: ${postData.resolution}</p>
+            <p class="card-text display-size">Display Size: ${postData.displaySize}</p>
+            <p class="card-text panel-size">Panel Type: ${postData.panelType}</p>
+            <div class="divider"></div>
+            <p class="price">Price: ${postData.price}</p>
+            <div class="text-center mt-2 mb-2">
+                <button class="buynow text-[#20204E] font-bold py-[6px] px-12 bg-[#E0E0E0] rounded-lg mt-3">
+                <i class="fa-solid fa-cart-shopping text-[#20204E]"></i> Buy Now
+                </button>
+            </div>
+            </a>
+            <button class="addtoCompare text-sm text-[#000000] pt-2">Add to Compare</button>
         `;
         postContainer.appendChild(postElement);
       });
@@ -490,7 +502,7 @@ const start = async function () {
     const prevButton = document.getElementById("prev");
     const nextButton = document.getElementById("next");
 
-    const contentLimit = 32;
+    const contentLimit = 60;
     const pageCount = Math.ceil(temparr.length / contentLimit);
     let currentPage = 1;
 
@@ -580,6 +592,8 @@ const start = async function () {
 
   const searchInput = document.getElementById("searchbar");
 
+
+// search input click function
   searchInput.addEventListener("input", (e) => {
     console.log(e.target.value);
     console.log("ghhh");
@@ -623,64 +637,72 @@ const start = async function () {
           postElement.classList.add("card");
           postElement.innerHTML = `
           <a href="javascript:goToDetailsPage(${postData.index})" class="card-link">
+            <p class="moniShop"> ${postData.shop}</p>
             <img src="${postData.image}" alt="" srcset="" class="card-image">
-            <h3 class="card-name">${postData.productName}</h3>
+            <div class="divider"></div>
+            <div class="card-name-box h-24" > 
+              <h3 class="card-name">${postData.productName}</h3>
+            </div>
             <p class="card-text resoluiton">Resolution: ${postData.resolution}</p>
             <p class="card-text display-size">Display Size: ${postData.displaySize}</p>
             <p class="card-text panel-size">Panel Type: ${postData.panelType}</p>
-            <p class="card-text refresh-rate">Shop Name: ${postData.shop}</p>
-            <p class="card-text price">Price: ${postData.price}</p>
-            
+            <div class="divider"></div>
+            <p class="price">Price: ${postData.price}</p>
+            <div class="text-center mt-2 mb-2">
+                <button class="buynow text-[#20204E] font-bold py-[6px] px-12 bg-[#E0E0E0] rounded-lg mt-3">
+                <i class="fa-solid fa-cart-shopping text-[#20204E]"></i> Buy Now
+                </button>
+            </div>
             </a>
-            <button class="addtoCompare">Add to Compare</button>
-          `;
+            <button class="addtoCompare text-sm text-[#000000] pt-2">Add to Compare</button>
+        `;
           postContainer.appendChild(postElement);
         });
       };
       postMethods();
       const compareButton = document.querySelectorAll(".addtoCompare");
-    console.log(compareButton);
-    compareButton.forEach((button, index) => {
-      button.addEventListener("click", () => {
-        console.log("something clicked");
-        var monitorsToCompare = [];
-        var tempMonitorsToCompare = localStorage.getItem("monitorsToCompare");
-        if (tempMonitorsToCompare) {
-          try {
-            tempMonitorsToCompare = JSON.parse(tempMonitorsToCompare);
-            if (tempMonitorsToCompare.length >= 4) {
-              tempMonitorsToCompare.shift();
-            }
-            //monitorsToCompare = tempMonitorsToCompare;
-            console.log(tempMonitorsToCompare);
-          } catch (error) {
-            console.log(error);
-          }
-        }
-        console.log(tempMonitorsToCompare);
-        if (tempMonitorsToCompare && Array.isArray(tempMonitorsToCompare)) {
-          for (var item of tempMonitorsToCompare) {
-            if (item.productName != arr[index].productName) {
-              console.log(item);
-              monitorsToCompare.push(item);
+      console.log(compareButton);
+      compareButton.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          console.log("something clicked");
+          var monitorsToCompare = [];
+          var tempMonitorsToCompare = localStorage.getItem("monitorsToCompare");
+          if (tempMonitorsToCompare) {
+            try {
+              tempMonitorsToCompare = JSON.parse(tempMonitorsToCompare);
+              if (tempMonitorsToCompare.length >= 4) {
+                tempMonitorsToCompare.shift();
+              }
+              //monitorsToCompare = tempMonitorsToCompare;
+              console.log(tempMonitorsToCompare);
+            } catch (error) {
+              console.log(error);
             }
           }
-        }
-        monitorsToCompare.push(arr[index]);
-        console.log(monitorsToCompare);
-        localStorage.setItem(
-          "monitorsToCompare",
-          JSON.stringify(monitorsToCompare)
-        );
+          console.log(tempMonitorsToCompare);
+          if (tempMonitorsToCompare && Array.isArray(tempMonitorsToCompare)) {
+            for (var item of tempMonitorsToCompare) {
+              if (item.productName != arr[index].productName) {
+                console.log(item);
+                monitorsToCompare.push(item);
+              }
+            }
+          }
+          monitorsToCompare.push(arr[index]);
+          console.log(monitorsToCompare);
+          localStorage.setItem(
+            "monitorsToCompare",
+            JSON.stringify(monitorsToCompare)
+          );
+        });
       });
-    });
       const pageNumbers = document.querySelector(".pageNumbers");
       const paginationList = document.getElementById("pagination");
       const cardItems = document.querySelectorAll(".card");
       const prevButton = document.getElementById("prev");
       const nextButton = document.getElementById("next");
 
-      const contentLimit = 32;
+      const contentLimit = 60;
       const pageCount = Math.ceil(cards.length / contentLimit);
       let currentPage = 1;
 
@@ -791,57 +813,65 @@ const start = async function () {
           postElement.classList.add("card");
           postElement.innerHTML = `
           <a href="javascript:goToDetailsPage(${postData.index})" class="card-link">
-          <img src="${postData.image}" alt="" srcset="" class="card-image">
-          <h3 class="card-name">${postData.productName}</h3>
-          <p class="card-text resoluiton">Resolution: ${postData.resolution}</p>
-          <p class="card-text display-size">Display Size: ${postData.displaySize}</p>
-          <p class="card-text panel-size">Panel Type: ${postData.panelType}</p>
-          <p class="card-text refresh-rate">Shop Name: ${postData.shop}</p>
-          <p class="card-text price">Price: ${postData.price}</p>
-          
-          </a>
-          <button class="addtoCompare">Add to Compare</button>
-          `;
+            <p class="moniShop"> ${postData.shop}</p>
+            <img src="${postData.image}" alt="" srcset="" class="card-image">
+            <div class="divider"></div>
+            <div class="card-name-box h-24" > 
+              <h3 class="card-name">${postData.productName}</h3>
+            </div>
+            <p class="card-text resoluiton">Resolution: ${postData.resolution}</p>
+            <p class="card-text display-size">Display Size: ${postData.displaySize}</p>
+            <p class="card-text panel-size">Panel Type: ${postData.panelType}</p>
+            <div class="divider"></div>
+            <p class="price">Price: ${postData.price}</p>
+            <div class="text-center mt-2 mb-2">
+                <button class="buynow text-[#20204E] font-bold py-[6px] px-12 bg-[#E0E0E0] rounded-lg mt-3">
+                <i class="fa-solid fa-cart-shopping text-[#20204E]"></i> Buy Now
+                </button>
+            </div>
+            </a>
+            <button class="addtoCompare text-sm text-[#000000] pt-2">Add to Compare</button>
+        `;
           postContainer.appendChild(postElement);
         });
       };
       postMethods();
       const compareButton = document.querySelectorAll(".addtoCompare");
-    console.log(compareButton);
-    compareButton.forEach((button, index) => {
-      button.addEventListener("click", () => {
-        console.log("something clicked");
-        var monitorsToCompare = [];
-        var tempMonitorsToCompare = localStorage.getItem("monitorsToCompare");
-        if (tempMonitorsToCompare) {
-          try {
-            tempMonitorsToCompare = JSON.parse(tempMonitorsToCompare);
-            if (tempMonitorsToCompare.length >= 4) {
-              tempMonitorsToCompare.shift();
-            }
-            //monitorsToCompare = tempMonitorsToCompare;
-            console.log(tempMonitorsToCompare);
-          } catch (error) {
-            console.log(error);
-          }
-        }
-        console.log(tempMonitorsToCompare);
-        if (tempMonitorsToCompare && Array.isArray(tempMonitorsToCompare)) {
-          for (var item of tempMonitorsToCompare) {
-            if (item.productName != arr[index].productName) {
-              console.log(item);
-              monitorsToCompare.push(item);
+      console.log(compareButton);
+      compareButton.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          console.log("something clicked");
+          var monitorsToCompare = [];
+          var tempMonitorsToCompare = localStorage.getItem("monitorsToCompare");
+          if (tempMonitorsToCompare) {
+            try {
+              tempMonitorsToCompare = JSON.parse(tempMonitorsToCompare);
+              if (tempMonitorsToCompare.length >= 4) {
+                tempMonitorsToCompare.shift();
+              }
+              //monitorsToCompare = tempMonitorsToCompare;
+              console.log(tempMonitorsToCompare);
+            } catch (error) {
+              console.log(error);
             }
           }
-        }
-        monitorsToCompare.push(arr[index]);
-        console.log(monitorsToCompare);
-        localStorage.setItem(
-          "monitorsToCompare",
-          JSON.stringify(monitorsToCompare)
-        );
+          console.log(tempMonitorsToCompare);
+          if (tempMonitorsToCompare && Array.isArray(tempMonitorsToCompare)) {
+            for (var item of tempMonitorsToCompare) {
+              if (item.productName != arr[index].productName) {
+                console.log(item);
+                monitorsToCompare.push(item);
+              }
+            }
+          }
+          monitorsToCompare.push(arr[index]);
+          console.log(monitorsToCompare);
+          localStorage.setItem(
+            "monitorsToCompare",
+            JSON.stringify(monitorsToCompare)
+          );
+        });
       });
-    });
 
       const pageNumbers = document.querySelector(".pageNumbers");
 
@@ -850,7 +880,7 @@ const start = async function () {
       const prevButton = document.getElementById("prev");
       const nextButton = document.getElementById("next");
 
-      const contentLimit = 32;
+      const contentLimit = 60;
       const pageCount = Math.ceil(arr.length / contentLimit);
       console.log(pageCount);
       let currentPage = 1;
@@ -945,15 +975,24 @@ const start = async function () {
       postElement.classList.add("card");
       postElement.innerHTML = `
       <a href="javascript:goToDetailsPage(${postData.index})" class="card-link">
+            <p class="moniShop"> ${postData.shop}</p>
             <img src="${postData.image}" alt="" srcset="" class="card-image">
-            <h3 class="card-name">${postData.productName}</h3>
+            <div class="divider"></div>
+            <div class="card-name-box h-24" > 
+              <h3 class="card-name">${postData.productName}</h3>
+            </div>
             <p class="card-text resoluiton">Resolution: ${postData.resolution}</p>
             <p class="card-text display-size">Display Size: ${postData.displaySize}</p>
             <p class="card-text panel-size">Panel Type: ${postData.panelType}</p>
-            <p class="card-text refresh-rate">Shop Name: ${postData.shop}</p>
-            <p class="card-text price">Price: ${postData.price}</p>
+            <div class="divider"></div>
+            <p class="price">Price: ${postData.price}</p>
+            <div class="text-center mt-2 mb-2">
+                <button class="buynow text-[#20204E] font-bold py-[6px] px-12 bg-[#E0E0E0] rounded-lg mt-3">
+                <i class="fa-solid fa-cart-shopping text-[#20204E]"></i> Buy Now
+                </button>
+            </div>
             </a>
-            <button class="addtoCompare">Add to Compare</button>
+            <button class="addtoCompare text-sm text-[#000000] pt-2">Add to Compare</button>
         `;
       postContainer.appendChild(postElement);
     });
@@ -966,7 +1005,7 @@ const start = async function () {
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
 
-  const contentLimit = 32;
+  const contentLimit = 60;
   const pageCount = Math.ceil(cards.length / contentLimit);
   let currentPage = 1;
 

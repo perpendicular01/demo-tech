@@ -1,75 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="monitorDetails.css" />
-    <title>Document</title>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="home.css" /> -->
+  <link rel="stylesheet" href="monitorDetails.css">
+
+  <!-- tailwind + daisy -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- javascript styles -->
+  <script src="../scripts/custom-style.js"></script>
+
+
+</head>
 
   <body>
-    <nav class="navbar">
-      <div class="nav-logo">
-        <div class="logo">
-          <i class="fa-solid fa-computer"></i>
-        </div>
-        <div class="logo-text">
-          <p>TechMerge</p>
-        </div>
-      </div>
-      <div class="nav-link">
-        <ul class="nav-button">
-          <li class="home"><a href="/">Home</a></li>
-          <li class="about"><a href="/about">About</a></li>
-          <li class="contact"><a href="/contact">Contact</a></li>
-          <i class="fa-solid fa-moon"></i>
-        </ul>
-      </div>
-      <div class="nav-product">
-        <!-- <div class="product">
-          <i class="fa-solid fa-shop product-image"></i>
-          <a href="../product/product.html">
-            <p class="product-text">Products</p>
-          </a>
-          <div class="product-content">
-            <a href="../product/product.html">Monitor</a>
-            <a href="../signUp/signup.html">Signup</a>
+    <nav class=" bg-[#5F6FB5]">
+      <div class="w-[90%] mx-auto pt-2 pb-4">
+        <!-- first nav -->
+        <div class="navbar">
+          <div class="nav-logo">
+            <h3 class="font-bold italic text-white text-2xl sm:text-3xl"> Tech <span class="text-[#20204E]"> Merge </span>
+            </h3>
           </div>
-        </div> -->
-        <div class="product">
-          <i class="fa-solid fa-shop" style="display: inline"></i>
-          <p class="registration" style="display: inline">Products</p>
-          <div class="product-content">
-            <a href="/monitor">MONITOR</a>
-            <a href="/cpu">CPU</a>
-            <a href="/ram">RAM</a>
-            <a href="">ROM</a>
-            <a href="/gpu">GPU</a>
+  
+          <!-- search -->
+          <div class="hidden md:flex">
+            <input class="w-[380px] h-10 px-4 bg-white text-black rounded-l-lg" type="text" name="" id="" placeholder="Enter your keyword">
+            <button class="bg-[#424874]  hover:bg-textcolor px-3 py-3 rounded-r-lg" type="submit">
+              <img class="w-5 h-5" src="assets/icons/search.png" alt=""> 
+            </button>
+          </div>
+  
+  
+          <div class="nav-link">
+            <div>
+              <ul class="nav-button">
+                <li class="about"><a href="/about">About</a></li>
+                <li class="contact"><a href="/contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="nav-authentication">
+              <div class="dropdown-container">
+                <i class="fa-solid fa-user" style="display: inline"></i>
+                <p class="registration" id="ac1" style="display: inline">Account</p>
+                <div class="dropdown-content">
+                  <a id="aclogin" href="/login">Login</a>
+                  <a id="acsignup" href="/signup">Signup</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+  
+          
+          <div class="cartDiv1">
+              <a href="/cart">
+                <div class="goto_cart1">
+                  <i class="fill-white fa-solid fa-cart-shopping "></i>
+                  <button id="goToCartBtn1" class="goToCart1 text-white">Cart</button>  
+                </div>
+              </a>
           </div>
         </div>
-      </div>
-
-      <div class="nav-authentication">
-        <div class="dropdown-container">
-          <i class="fa-solid fa-user" style="display: inline"></i>
-          <p class="registration" style="display: inline">Account</p>
-          <div class="dropdown-content">
-            <a href="/login">Login</a>
-            <a href="/signup">Signup</a>
-          </div>
+  
+        <!-- second nav -->
+        <div>
+          <ul class="flex justify-between gap-5 items-center ">
+            <li class="Home text-[#20204E] font-bold hover:text-ash text-sm md:text-xl hover:text-white hover:font-bold"> <a href="/">Home</a> </li>
+            <li class="text-white hover:text-ash text-sm md:text-xl hover:text-black hover:font-bold"> <a href="/monitor"> Monitor</a></li>
+            <li class="text-white hover:text-ash text-sm md:text-xl hover:text-black hover:font-bold"> <a href="/ram">Ram</a> </li>
+            <li class="text-white hover:text-ash text-sm md:text-xl hover:text-black hover:font-bold"> <a href="/rom"> Rom </a> </li>
+            <li class="text-white hover:text-ash text-sm md:text-xl hover:text-black hover:font-bold"> <a href="/cpu"> Cpu</a> </li>
+            <li class="text-white hover:text-ash text-sm md:text-xl hover:text-black hover:font-bold"> <a href="/gpu"> Gpu</a> </li>
+            <li class="text-white hover:text-ash text-sm md:text-xl hover:text-black hover:font-bold"> <a href="/processor"> Processor</a> </li>
+            <li class="text-white hover:text-ash text-sm md:text-xl hover:text-black hover:font-bold"> <a href="/ssd"> SSD</a> </li>
+            <li class="text-white hover:text-ash text-sm md:text-xl hover:text-black hover:font-bold"> <a href="/keyboard"> Keyboard </a> </li>
+            <li class="text-white hover:text-ash text-sm md:text-xl hover:text-black hover:font-bold"> <a href="/mouse"> Mouse </a> </li>
+          </ul>
         </div>
       </div>
     </nav>
 
-    <main class="main">
-      <div class="card-container">
+    <main class="main bg-[#F4EEFF] ">
+      <div class="card-container ">
         <!-- <div class="card">
                 <h3 class="card-name">Card Heading
                 </h3>
@@ -78,17 +98,28 @@
                 <p class="card-text resolution">Resolution</p> -->
       </div>
 
+      <!-- source link -->
       <a href="" class="sourceLink">
-        <div class="cartLink">
-          <i class="fa-solid fa-link"></i>
-          <button class="addtocart">Source</button>
+        <div class="cartLink flex">
+          
+          <button class="addtocart text-[#20204E] font-bold py-[6px] px-4 bg-[#E0E0E0] rounded-lg my-4"><i class="fa-solid fa-link"></i>  View page source </button>
         </div>
       </a>
-      <div class="cart">
-        <i class="fa-solid fa-cart-plus"></i>
-        <button id="addToCartBtn" class="addtocart">Add To Cart</button>
+
+      <!-- plus minus -->
+      <div class="plus_minus">
+        <button class="plus">+</button>
+        <p class="plus_minus_text">0</p>
+        <button class="minus">-</button>
       </div>
 
+      <!-- card button -->
+      <div class="cart">
+        
+        <button id="addToCartBtn" class="addtocart text-[#20204E] font-bold py-[6px] px-4 bg-[#E0E0E0] rounded-lg my-4"> <i class="fa-solid fa-cart-plus"></i>  Add To Cart </button>
+      </div>
+
+      <!-- cart
       <div class="cartDiv">
         <div class="goto_cart">
           <a href="/cart">
@@ -96,14 +127,16 @@
             <button id="goToCartBtn" class="goToCart">Cart</button>
           </a>
         </div>
-      </div>
+      </div> -->
 
+      <!-- description -->
       <div class="descriptionDiv"></div>
 
+      <!-- comment box form -->
       <form action="" class="comment-box">
-        <div class="user">
-          <i class="fa-solid fa-user"></i>
-          <div class="name">User</div>
+        <div class="user flex items-center gap-2 ml-6 text-2xl font-bold mt-5 mb-3">
+          <i class="fa-solid fa-user text-black"></i>
+          <div class="name text-black">User</div>
         </div>
         <textarea
           name="comment"
@@ -111,19 +144,16 @@
           cols="30"
           rows="10"
         ></textarea>
-        <button id="submitCommentBtn" class="comment-submit" type="button">
+        <button id="submitCommentBtn" class="comment-submit" >
           Comment
         </button>
       </form>
 
-      <div class="plus_minus">
-        <button class="plus">+</button>
-        <p class="plus_minus_text">0</p>
-        <button class="minus">-</button>
-      </div>
+      
 
+      <!-- comment section -->
       <div class="comment-section">
-        <h2 class="comment-section-header">Comments</h2>
+        <h2 class="comment-section-header mt-20">Comments</h2>
         <div class="comment-container">
           <!-- <div class="comment-area-div">
             <i class="fa-solid fa-user"></i>
@@ -137,6 +167,8 @@
 
       <script src="monitorDetails.js"></script>
     </main>
+
+   
 
     <footer class="footer"></footer>
   </body>

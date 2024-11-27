@@ -146,7 +146,7 @@ exports.scrapeStartechMoni = async () => {
                 i++;
                 continue;
             }
-
+            
             try {
                 await connection.execute('delete from monitor_shop where productName=? and shop=?', [productName[0], 'Startech']);
             } catch (error) {
